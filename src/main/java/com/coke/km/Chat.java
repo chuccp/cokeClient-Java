@@ -1,27 +1,30 @@
 package com.coke.km;
 
-import com.coke.km.message.Message;
+import com.coke.km.stream.KmStream;
 
 public class Chat {
 	
-	private ClientConfig clientConfig;
+	
+	private KmStream kmStream;
 	
 	public Chat(ClientConfig clientConfig) {
-		this.clientConfig = clientConfig;
+		this.kmStream = new KmStream(clientConfig);
 	}
 
 	
-	public void sendMessage(Message message) {
+	public void sendMessage(String to,String msg) {
+		
+		this.kmStream.sendMessage(to, msg);
+		
 		
 	}
 	
 	public void start() {
 		this.conn();
 	}
-	
-	
 	private void conn() {
 		
+		this.kmStream.readMessage();
 		
 	}
 	

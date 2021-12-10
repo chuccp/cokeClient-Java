@@ -1,21 +1,21 @@
 package com.coke.km.stream;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.UnknownHostException;
-
+import com.coke.km.ClientConfig;
 import com.coke.km.message.Message;
 
 public class KmStream {
 	
-	private InputStream ips;
+	private ClientConfig clientConfig;
 	
-	public KmStream(InputStream ips) {
-		this.ips = ips;
+	public KmStream(ClientConfig clientConfig) {
+		this.clientConfig = clientConfig;
 	}
 	
+	public void sendMessage(String to,String msg) {
+		
+	}
 	
-	public void start() throws UnknownHostException, IOException {
+	public void start() {
 	}
 	
 	
@@ -26,7 +26,11 @@ public class KmStream {
 		return null;
 	}
 	
-	
+	public boolean isClose() {
+		
+		return false;
+	}
+
 	
 
 }
